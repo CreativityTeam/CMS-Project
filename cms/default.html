@@ -31,7 +31,7 @@
     
 
 </head>
-<body>
+<body ng-controller="DefaultController">
 
 <div class="wrapper">
     <div class="sidebar" data-background-color="white" data-active-color="danger">
@@ -99,6 +99,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
+                    <a class="navbar-brand" href="#">Welcome {{ name }}</a>
                     <a class="navbar-brand" href="#">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -128,6 +129,12 @@
                             <a href="#">
 								<i class="ti-settings"></i>
 								<p>Settings</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-click="logout()">
+								<i class="ti-close"></i>
+								<p>Sign Out</p>
                             </a>
                         </li>
                     </ul>
@@ -185,8 +192,10 @@
 
     <!--  Angular Router -->
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
     <script src="jslib/mainjs/main.js"></script>
     <script src="jslib/mainjs/mainroute.js"></script>
     <script src="jslib/config/constant.js"></script>
     <script src="jslib/config/service.js"></script>
+    <script src="jslib/controllers/defaultctrl.js"></script>
 </html>
