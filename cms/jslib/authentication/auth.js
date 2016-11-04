@@ -5,11 +5,30 @@ var auth = angular.module('auth',[
     'ngAnimate'
 ]);
 
+auth.directive('loading',function(){
+    return {
+        restrict : "E",
+        replace : true,
+        template: '<div class="loading"><img src="/assets/img/loading.gif" width="20" height="20" /> Please Wait A Few Minutes...</div>',
+        link : function(scope,element,attr){
+            scope.$watch('loading',function(val){
+                if(val){
+                    $(element).show();
+                }else{
+                    $(element).hide();
+                }
+            });
+        }
+    }
+});
+
 auth.controller('logincontroller',function($scope,$http,$window,AuthService,API_ENDPOINT,toaster){
     $scope.login = function(){
+        $scope.loading = true;
         AuthService.login($scope.user).then(function(msg){
             $window.location.href = "/";   
         },function(errMsg){
+            $scope.loading = false;
             toaster.pop('error',"Login Exception",errMsg)
         });
     };
