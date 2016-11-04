@@ -182,3 +182,21 @@ textarea {
   color: #ffffff;
   text-align: left;
 }
+
+.alert-box {
+    color:#555;
+    border-radius:5px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+    padding:10px 10px 10px 36px;
+    margin-bottom:20px;
+}
+
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error {
+    background:#ffecec url('/assets/img/error.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
