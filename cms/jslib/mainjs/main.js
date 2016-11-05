@@ -3,7 +3,8 @@ var app = angular.module('cms',[
     'mainroute',
     'globalvar',
     'authservice',
-    'defaultctrl'
+    'defaultctrl',
+    'userctrl'
 ]);
 
 app.directive('loading',function(){

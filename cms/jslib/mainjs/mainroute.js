@@ -10,6 +10,7 @@ mainroute.config(function($stateProvider, $urlRouterProvider, $locationProvider)
         })
         .state('user',{
             url: '/user',
+            controller : 'usercontroller',
             templateUrl: 'user.html'
         })
         .state('table',{
