@@ -31,15 +31,22 @@
 	<div class="col-lg-8 col-md-7">
 		<div class="card">
 			<div class="header">
-				<h4 class="title">Edit Profile</h4>
+				<loading></loading>
+				<h4 class="title">Edit Profile , User Id : {{ user._id }}</h4>
 			</div>
 			<div class="content">
 				<form>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label>
-								<input type="email" class="form-control border-input" placeholder="Email" value="{{ user.local.email }}">
+								<input type="text" class="form-control border-input" placeholder="Email" value="{{ user.local.email }}">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Facebook Id</label>
+								<input type="text" class="form-control border-input" placeholder="Facebook Id" value="{{ user.facebook.id }}">
 							</div>
 						</div>
 					</div>
@@ -48,34 +55,40 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Name</label>
-								<input type="text" class="form-control border-input" placeholder="Company" value="{{ user.local.name }}">
+								<input type="text" class="form-control border-input" placeholder="Name" value="{{ user.local.name }}">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Gender</label>
-								<input type="text" class="form-control border-input" placeholder="Company" value="{{ user.local.name }}">
+								<input type="text" class="form-control border-input" placeholder="Gender" value="{{ user.gender }}">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Birthday</label>
-								<input type="text" class="form-control border-input" placeholder="Company" value="{{ user.local.name }}">
+								<input type="text" class="form-control border-input" placeholder="Birthday" value="{{ user.birthday }}">
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
-								<label>Address</label>
-								<input type="text" class="form-control border-input" placeholder="Home Address" value="Melbourne, Australia">
+								<label>Last Login</label>
+								<input type="text" class="form-control border-input" placeholder="Last Login" value="{{ user.last_login }}" disabled>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Address</label>
+								<input type="text" class="form-control border-input" placeholder="Address" value="{{ user.address }}">
+							</div>
+						</div>
+						<div class="col-md-4">
 							<div class="form-group">
 								<label>Phone</label>
-								<input type="text" class="form-control border-input" placeholder="Home Address" value="Melbourne, Australia">
+								<input type="text" class="form-control border-input" placeholder="Phone Address" value="{{ user.phone }}">
 							</div>
 						</div>
 					</div>

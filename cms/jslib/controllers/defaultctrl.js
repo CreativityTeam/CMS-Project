@@ -2,7 +2,7 @@ var defaultctrl = angular.module('defaultctrl',[]);
 
 defaultctrl.controller("DefaultController",function($scope,$http,AuthService,$window,API_ENDPOINT){
     $scope.isHide = {
-        supperUser : false,
+        supperUser : true,
         user : true,
         res : true,
         comment : true,
@@ -16,9 +16,9 @@ defaultctrl.controller("DefaultController",function($scope,$http,AuthService,$wi
         if(AuthService.isAuthenticated()){
                 $http.get(API_ENDPOINT.url + '/api/users/findone/' + AuthService.tokensave()).success(function(response){
                 $scope.name = response.data.local.name;
-                /*if(response.data.role == "SuperUser"){
+                if(response.data.role == "SupperUser"){
                     $scope.isHide.supperUser = false;
-                }*/
+                }
             });
         }
     };

@@ -13,6 +13,11 @@ mainroute.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             controller : 'usercontroller',
             templateUrl: 'user.html'
         })
+        .state('usermanage',{
+            url: '/usermanage',
+            controller : 'usercontroller',
+            templateUrl: 'user.manage.html'
+        })
         .state('restaurant',{
             url: '/restaurant',
             templateUrl: 'table.html'
