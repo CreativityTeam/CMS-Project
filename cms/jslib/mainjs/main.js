@@ -4,14 +4,15 @@ var app = angular.module('cms',[
     'globalvar',
     'authservice',
     'defaultctrl',
-    'userctrl'
+    'userctrl',
+    'toaster'
 ]);
 
 app.directive('loading',function(){
     return {
         restrict : "E",
         replace : true,
-        template: '<div class="loading"><img src="http://www.nasa.gov/multimedia/videogallery/ajax-loader.gif" width="20" height="20" />Login...</div>',
+        template: '<div class="loading"><img src="/assets/img/loading.gif" width="20" height="20" /> Updating Information....</div>',
         link : function(scope,element,attr){
             scope.$watch('loading',function(val){
                 if(val){

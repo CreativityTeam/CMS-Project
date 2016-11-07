@@ -23,7 +23,7 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
 
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.css" rel="stylesheet" />
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
@@ -62,7 +62,12 @@
                     </a>
                      <div ng-hide="isHide.user">
                         <ul class="manage">
-                            <li>
+                             <li ng-hide="isHide.supperUser">
+                                <a ui-sref="usermanage">
+                                    User
+                                </a>
+                            </li>
+                            <li class="list">
                                 <a href="#">
                                     Favorite Restaurant
                                 </a>
@@ -120,38 +125,38 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a ui-sref="comment" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="comment">
                         <i class="ti-text"></i>
                         <p>Comment</p>
                     </a>
                 </li>
-                <li>
-                    <a ui-sref="food" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="food">
                         <i class="ti-receipt"></i>
                         <p>Food</p>
                     </a>
                 </li>
-                <li>
-                    <a ui-sref="order" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="order">
                         <i class="ti-bell"></i>
                         <p>Order</p>
                     </a>
                 </li>
-                <li>
-                    <a ui-sref="message" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="message">
                         <i class="ti-email"></i>
                         <p>Message</p>
                     </a>
                 </li>
-                <li>
-                    <a ui-sref="publicity" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="publicity">
                         <i class="ti-cloud-up"></i>
                         <p>Publicity</p>
                     </a>
                 </li>
-                <li>
-                    <a ui-sref="service" ng-hide="isHide.supperUser">
+                <li ng-hide="isHide.supperUser">
+                    <a ui-sref="service">
                         <i class="ti-rss"></i>
                         <p>Service</p>
                     </a>
@@ -258,7 +263,8 @@
 
     <!--  Angular Router -->
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script>
     <script src="jslib/mainjs/main.js"></script>
     <script src="jslib/mainjs/mainroute.js"></script>
     <script src="jslib/config/constant.js"></script>
