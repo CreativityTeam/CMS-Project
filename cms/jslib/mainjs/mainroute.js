@@ -13,20 +13,32 @@ mainroute.config(function($stateProvider, $urlRouterProvider, $locationProvider)
             controller : 'usercontroller',
             templateUrl: 'user.html'
         })
-        .state('table',{
-            url: '/table',
+        .state('restaurant',{
+            url: '/restaurant',
             templateUrl: 'table.html'
         })
-        .state('typography',{
-            url: '/typography',
+        .state('comment',{
+            url: '/comment',
             templateUrl: 'typography.html'
         })
-        .state('icons',{
-            url: '/icons',
+        .state('food',{
+            url: '/food',
             templateUrl: 'icons.html'
         })
-        .state('notifications',{
-            url: '/notifications',
+        .state('order',{
+            url: '/order',
+            templateUrl: 'notifications.html'
+        })
+        .state('message',{
+            url: '/message',
+            templateUrl: 'notifications.html'
+        })
+        .state('publicity',{
+            url: '/publicity',
+            templateUrl: 'notifications.html'
+        })
+        .state('service',{
+            url: '/service',
             templateUrl: 'notifications.html'
         });
     $locationProvider.html5Mode({
