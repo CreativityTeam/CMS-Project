@@ -56,33 +56,104 @@
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="user">
+                    <a ui-sref="user" ng-click="manageuser()">
                         <i class="ti-user"></i>
-                        <p>User Profile</p>
+                        <p>User</p>
                     </a>
+                     <div ng-hide="isHide.user">
+                        <ul class="manage">
+                            <li>
+                                <a href="#">
+                                    Favorite Restaurant
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Favorite Food
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
-                    <a ui-sref="table">
+                    <a ui-sref="restaurant" ng-click="managerestaurant()">
                         <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
+                        <p>Restaurant</p>
                     </a>
+                     <div ng-hide="isHide.res">
+                        <ul class="manage">
+                            <li>
+                                <a href="#">
+                                    Create Restaurant
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Photos
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Comment
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Service
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Publicity
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Food
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    Order
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
-                    <a ui-sref="typography">
+                    <a ui-sref="comment" ng-hide="isHide.supperUser">
                         <i class="ti-text"></i>
-                        <p>Typography</p>
+                        <p>Comment</p>
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="icons">
-                        <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
+                    <a ui-sref="food" ng-hide="isHide.supperUser">
+                        <i class="ti-receipt"></i>
+                        <p>Food</p>
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="notifications">
+                    <a ui-sref="order" ng-hide="isHide.supperUser">
                         <i class="ti-bell"></i>
-                        <p>Notifications</p>
+                        <p>Order</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="message" ng-hide="isHide.supperUser">
+                        <i class="ti-email"></i>
+                        <p>Message</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="publicity" ng-hide="isHide.supperUser">
+                        <i class="ti-cloud-up"></i>
+                        <p>Publicity</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="service" ng-hide="isHide.supperUser">
+                        <i class="ti-rss"></i>
+                        <p>Service</p>
                     </a>
                 </li>
             </ul>
@@ -173,19 +244,14 @@
                 </div>
             </div>
         </footer>
-
     </div>
 </div>
-
-
 </body>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="assets/js/paper-dashboard.js" type="text/javascript"></script>
 
     <!--  Angular Plugin -->
     <script src="node_modules/angular/angular.min.js"></script>

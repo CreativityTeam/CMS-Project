@@ -68,3 +68,11 @@
 .table-upgrade td:nth-child(3){
     text-align: center;
 }
+
+ul.manage {
+  	list-style : none;
+}
+
+ul.manage li.list {
+  	padding-top: 20px;
+}
