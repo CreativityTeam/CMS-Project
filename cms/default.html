@@ -67,7 +67,7 @@
                                     User
                                 </a>
                             </li>
-                            <li class="list">
+                            <li ng-class="list">
                                 <a href="#">
                                     Favorite Restaurant
                                 </a>
@@ -90,11 +90,6 @@
                             <li>
                                 <a href="#">
                                     Create Restaurant
-                                </a>
-                            </li>
-                            <li class="list">
-                                <a href="#">
-                                    Photos
                                 </a>
                             </li>
                             <li class="list">
@@ -124,6 +119,12 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+                <li>
+                    <a ui-sref="photo">
+                        <i class="ti-save-alt"></i>
+                        <p>Photos</p>
+                    </a>
                 </li>
                 <li ng-hide="isHide.supperUser">
                     <a ui-sref="comment">
@@ -201,15 +202,9 @@
                                 <li><a href="#">Another notification</a></li>
                               </ul>
                         </li>
-						<li>
-                            <a href="#">
-								<i class="ti-settings"></i>
-								<p>Settings</p>
-                            </a>
-                        </li>
                         <li>
                             <a ng-click="logout()">
-								<i class="ti-close"></i>
+								<i class="ti-settings"></i>
 								<p>Sign Out</p>
                             </a>
                         </li>
@@ -271,4 +266,5 @@
     <script src="jslib/config/service.js"></script>
     <script src="jslib/controllers/defaultctrl.js"></script>
     <script src="jslib/controllers/userctrl.js"></script>
+    <script src="jslib/controllers/photoctrl.js"></script>
 </html>

@@ -1,7 +1,7 @@
 var userctrl = angular.module("userctrl",[]);
 
 userctrl.controller("usercontroller",function($scope,$http,AuthService,API_ENDPOINT,toaster){
-
+    $scope.searchName = "";
     $scope.map = "map.html";
      var getinfo = function(){
         if(AuthService.isAuthenticated()){
@@ -39,7 +39,7 @@ userctrl.controller("usercontroller",function($scope,$http,AuthService,API_ENDPO
          });
     }
 
-    $scope.update = function() {
+    $scope.updateRole = function() {
         $http.put(API_ENDPOINT.url + '/api/users/changeRole/' + $scope.newUser._id ,$scope.newUser).success(function(response){
             $scope.loading = true;
             if(response.success){
@@ -48,6 +48,17 @@ userctrl.controller("usercontroller",function($scope,$http,AuthService,API_ENDPO
                 $scope.loading = false;
             }    
          });    
+    };
+
+    $scope.updateUser = function(id) {
+        $http.put(API_ENDPOINT.url + '/api/users/update/' + id, $scope.user).success(function(response){
+            $scope.loading = true;
+            if(response.success){
+                getinfo();
+                toaster.pop('success',"Update Status",response.msg);
+                $scope.loading = false;
+            }    
+         });      
     };
 
     getAllUser();

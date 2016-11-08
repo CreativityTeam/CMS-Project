@@ -3,11 +3,18 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="header">
-				<h4 class="title">User List</h4>
-				<p class="category">Here is list user</p>				
+				<h4 class="title">User List</h4>		
 				<loading></loading>
 			</div>
 			<div class="content table-responsive table-full-width">
+				<form>
+    				<div class="form-group">
+      					<div class="input-group">
+        					<div class="input-group-addon"><i class="fa fa-search"></i></div>
+        						<input type="text" class="form-control" placeholder="Search Name" ng-model="searchName">
+      						</div>      
+   						</div>
+  				</form>
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -25,9 +32,9 @@
 							<td><input class="form-control" ng-model="newUser.gender" disabled></td>
 							<td><input class="form-control" ng-model="newUser.role"></td>
 							<td><input class="form-control" ng-model="newUser.address" disabled></td>
-							<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+							<td><button class="btn btn-info" ng-click="updateRole()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 						</tr>
-						<tr ng-repeat="user in userList">
+						<tr ng-repeat="user in userList | filter:searchName">
 							<td>{{ user._id }}</td>
 							<td>{{ user.local.name }}</td>
 							<td>{{ user.local.email }}</td>

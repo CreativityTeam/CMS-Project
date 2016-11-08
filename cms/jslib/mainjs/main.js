@@ -5,6 +5,7 @@ var app = angular.module('cms',[
     'authservice',
     'defaultctrl',
     'userctrl',
+    'photoctrl',
     'toaster'
 ]);
 
