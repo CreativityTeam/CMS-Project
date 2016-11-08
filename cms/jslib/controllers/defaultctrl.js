@@ -1,6 +1,7 @@
 var defaultctrl = angular.module('defaultctrl',[]);
 
 defaultctrl.controller("DefaultController",function($scope,$http,AuthService,$window,API_ENDPOINT){
+    $scope.list = "";
     $scope.isHide = {
         supperUser : true,
         user : true,
@@ -18,6 +19,7 @@ defaultctrl.controller("DefaultController",function($scope,$http,AuthService,$wi
                 $scope.name = response.data.local.name;
                 if(response.data.role == "SupperUser"){
                     $scope.isHide.supperUser = false;
+                    $scope.list = "list";
                 }
             });
         }

@@ -1,4 +1,5 @@
 <div class="row">
+	<toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
 	<div class="col-lg-4 col-md-5">
 		<div class="card card-user">
 			<div class="image">
@@ -6,23 +7,23 @@
 			</div>
 			<div class="content">
 				<div class="author">
-					<img class="avatar border-white" src="assets/img/faces/face-2.jpg" alt="..." />
+					<img class="avatar border-white" ng-src="http://localhost:3000/{{user.avatar}}" alt="..." />
 					<h4 class="title">{{ user.local.name }}<br />
-						<a href="#"><small>@chetfaker</small></a>
+						<a href="#"><small>{{ user.facebook.name }}</small></a>
 					</h4>
 				</div>
 				<p class="description text-center">
-					"I like the way you work it <br> No diggity <br> I wanna bag it up"
+					{{ user.about }}
 				</p>
 			</div>
 			<hr>
 			<div class="text-center">
 				<div class="row">
 					<div class="col-md-5 col-md-offset-1">
-						<h5><strong>12</strong><br/><small>Favorite Restaurants</small></h5>
+						<h5><strong>{{ user.res_favorite.length }}</strong><br/><small>Restaurants Is Liked</small></h5>
 					</div>
 					<div class="col-md-5">
-						<h5><strong>12</strong><br/><small>Favorite Foods</small></h5>
+						<h5><strong>{{ user.foods_favorite.length }}</strong><br/><small>Foods Is Liked</small></h5>
 					</div>
 				</div>
 			</div>
@@ -40,34 +41,41 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label>
-								<input type="text" class="form-control border-input" placeholder="Email" value="{{ user.local.email }}">
+								<input type="text" class="form-control border-input" placeholder="Email" value="{{ user.local.email }}" disabled>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Facebook Id</label>
-								<input type="text" class="form-control border-input" placeholder="Facebook Id" value="{{ user.facebook.id }}">
+								<input type="text" class="form-control border-input" placeholder="Facebook Id" value="{{ user.facebook.id }}" disabled>
 							</div>
 						</div>
 					</div>
-
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Avatar URL</label>
+								<input type="text" class="form-control border-input" placeholder="Avatar Url" value="{{ user.avatar }}" ng-model="user.url">
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Name</label>
-								<input type="text" class="form-control border-input" placeholder="Name" value="{{ user.local.name }}">
+								<input type="text" class="form-control border-input" placeholder="Name" value="{{ user.local.name }}" ng-model="user.local.name">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Gender</label>
-								<input type="text" class="form-control border-input" placeholder="Gender" value="{{ user.gender }}">
+								<input type="text" class="form-control border-input" placeholder="Gender" value="{{ user.gender }}" ng-model="user.gender">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Birthday</label>
-								<input type="text" class="form-control border-input" placeholder="Birthday" value="{{ user.birthday }}">
+								<input type="text" class="form-control border-input" placeholder="Birthday" value="{{ user.birthday }}" ng-model="user.birthday">
 							</div>
 						</div>
 					</div>
@@ -82,13 +90,13 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Address</label>
-								<input type="text" class="form-control border-input" placeholder="Address" value="{{ user.address }}">
+								<input type="text" class="form-control border-input" placeholder="Address" value="{{ user.address }}" ng-model="user.address">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Phone</label>
-								<input type="text" class="form-control border-input" placeholder="Phone Address" value="{{ user.phone }}">
+								<input type="text" class="form-control border-input" placeholder="Phone Address" value="{{ user.phone }}" ng-model="user.phone">
 							</div>
 						</div>
 					</div>
@@ -97,15 +105,12 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>About Me</label>
-								<textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme
-You doubt I'll bother, reading into it
-I'll probably won't, left to my own devices
-But that's the difference in our opinions.</textarea>
+								<textarea rows="2" class="form-control border-input" placeholder="Here can be your description" value="{{ user.about }}" ng-model="user.about">{{ user.about }}</textarea>
 							</div>
 						</div>
 					</div>
 					<div class="text-center">
-						<button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+						<button type="submit" class="btn btn-info btn-fill btn-wd" ng-click="updateUser(user._id)">Update Profile</button>
 					</div>
 					<div class="clearfix"></div>
 				</form>
