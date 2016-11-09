@@ -151,9 +151,9 @@ textarea {
 .button {
   border: 0;
   outline: none;
-  border-radius: 0;
+  border-radius: 5px;
   padding: 15px 0;
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -169,6 +169,12 @@ textarea {
 
 .button-block {
   display: block;
+  width: 100%;
+}
+
+.button-block-facebook {
+  display: block;
+  background: #3b5998;
   width: 100%;
 }
 

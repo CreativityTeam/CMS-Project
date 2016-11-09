@@ -35,7 +35,7 @@ userctrl.controller("usercontroller",function($scope,$http,AuthService,API_ENDPO
             if(response.success){
                     $scope.newUser = response.data;
                     $scope.loading = false;
-                }    
+            }    
          });
     }
 

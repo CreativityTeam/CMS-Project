@@ -64,6 +64,7 @@ authservice.service('AuthService',function($q, $http,API_ENDPOINT){
     login: login,
     register: register,
     logout: logout,
+    setToken : function(token) { return storeToken(token);},
     tokensave : function() {return authToken;},
     isAuthenticated: function() {return isAuthenticated;}
   };

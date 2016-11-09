@@ -58,7 +58,7 @@
 					<tbody>
 						<tr ng-repeat="photo in photoList | filter:searchPhoto">
 							<td>{{ photo._id }}</td>
-							<td><img ng-src="http://localhost:3000/{{photo.url}}" border=3 height=100 width=100></img></td>
+							<td><img ng-src="{{photo.url}}" border=3 height=100 width=100></img></td>
 							<td>{{ photo.userid }}</td>
 							<td>{{ photo.url }}</td>
 							<td>{{ photo.description }}</td>
