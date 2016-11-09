@@ -7,7 +7,7 @@
 			</div>
 			<div class="content">
 				<div class="author">
-					<img class="avatar border-white" ng-src="http://localhost:3000/{{user.avatar}}" alt="..." />
+					<img class="avatar border-white" ng-src="{{user.avatar}}" alt="..." />
 					<h4 class="title">{{ user.local.name }}<br />
 						<a href="#"><small>{{ user.facebook.name }}</small></a>
 					</h4>
@@ -55,7 +55,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Avatar URL</label>
-								<input type="text" class="form-control border-input" placeholder="Avatar Url" value="{{ user.avatar }}" ng-model="user.url">
+								<input type="text" class="form-control border-input" placeholder="Avatar Url" value="{{ user.avatar }}" ng-model="user.avatar">
 							</div>
 						</div>
 					</div>
